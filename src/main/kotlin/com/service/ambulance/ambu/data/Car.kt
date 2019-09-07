@@ -13,7 +13,7 @@ import java.util.*
 @Document(collection = "cars")
 data class Car(@Id var id: String? = null,
                var number: String,
-               @Indexed(name = "2dsphere")
+               @Indexed(name = "2dsphereCurrentLocation")
                var currentLocation: GeoJsonPoint,
                var status: String,
                var type: String,

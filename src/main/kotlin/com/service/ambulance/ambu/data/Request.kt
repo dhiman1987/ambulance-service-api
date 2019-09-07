@@ -13,9 +13,9 @@ data class Request(
         @Id var id: String? = null,
         var  fromPlaceName: String,
         var  toPlaceName:String,
-        @Indexed(name = "2dsphere")
+        @Indexed(name = "2dsphereFromLocation")
         var fromLocation: GeoJsonPoint,
-        @Indexed(name = "2dsphere")
+        @Indexed(name = "2dsphereToLocation")
         var toLocation: GeoJsonPoint,
         var requestedCarType: String,
         var bookingTime: Date,

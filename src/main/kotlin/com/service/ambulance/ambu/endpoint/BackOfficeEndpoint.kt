@@ -20,7 +20,7 @@ class BackOfficeEndpoint(val backOfficeService: BackOfficeService){
     fun findRequestsByStatus(@RequestParam("status") status: String): Iterable<Request>
             = backOfficeService.findRequestsByStatus(status)
 
-    @GetMapping("request-by-status")
+    @GetMapping("find-ambulance")
     fun findCarsForRequest(
             @RequestBody request: Request,
             @RequestParam(value = "radius", defaultValue = "3", required = false)distance : Double): Iterable<Car>
