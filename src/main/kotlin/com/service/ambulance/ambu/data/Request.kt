@@ -12,24 +12,26 @@ import org.springframework.stereotype.Repository
 data class Request(
         @Id var id: String? = null,
         var  fromPlaceName: String,
-        var  toPlaceName:String,
         @Indexed(name = "2dsphereFromLocation")
         var fromLocation: GeoJsonPoint,
-        @Indexed(name = "2dsphereToLocation")
-        var toLocation: GeoJsonPoint,
         var requestedCarType: String,
-        var bookingTime: Date,
-        var confirmationTime: Date,
-        var completionTime: Date,
-        var assignedCar: Car,
+        var bookingTime: Date? = null,
+        var confirmationTime: Date? = null,
+        var completionTime: Date? = null,
+        var assignedCar: Car? = null,
         var customer: Customer,
-        var status: String,
-        var createdOn: Date,
-        var updatedOn: Date)
+        var status: String? = null,
+        var createdOn: Date? = null,
+        var updatedOn: Date? = null)
+
+data class Customer(
+        var  name : String,
+        var  address:String,
+        var  mobile: String)
 
 @Repository
 interface RequestRepository : MongoRepository<Request, String> {
 
         fun findByStatusOrderByBookingTimeDesc(status: String) : Iterable<Request>
-        fun findByStatusAndCustomer_idOrderByBookingTimeDesc(status: String, customerId: String) : Iterable<Request>
+        fun findByStatusAndCustomer_MobileOrderByBookingTimeDesc(status: String, mobile: String) : Iterable<Request>
 }

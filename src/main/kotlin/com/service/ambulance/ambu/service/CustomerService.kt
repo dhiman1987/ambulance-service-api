@@ -18,7 +18,7 @@ class CustomerService(val requestRepo: RequestRepository, val carRepo: CarReposi
         if(null == addedRequest.id){
             throw Exception("Failed to add new request")
         }
-        return addedRequest
+        return addedRequest.copy()
     }
 
     fun cancelRequest(request: Request): Request{
@@ -31,15 +31,15 @@ class CustomerService(val requestRepo: RequestRepository, val carRepo: CarReposi
     fun getRequest(id: String) : Request{
         val request: Optional<Request> = requestRepo.findById(id);
         if(request.isPresent){
-            return request.get()
+            return request.get().copy()
         }
         throw Exception("No request found with id $id")
     }
 
     fun getRequestByStatus(status: String, customerId: String) : Iterable<Request>{
-        val requests : Iterable<Request> ?= requestRepo.findByStatusAndCustomer_idOrderByBookingTimeDesc(status, customerId)
+        val requests : Iterable<Request> ?= requestRepo.findByStatusAndCustomer_MobileOrderByBookingTimeDesc(status, customerId)
         if(null != requests ){
-            return requests
+            return ArrayList(requests.map { it.copy() })
         }
         throw Exception("No request found with status $status and customer id $customerId")
     }

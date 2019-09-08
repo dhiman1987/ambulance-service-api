@@ -3,6 +3,8 @@ package com.service.ambulance.ambu.data
 import org.springframework.data.annotation.Id
 import org.springframework.data.mongodb.core.index.Indexed
 import org.springframework.data.mongodb.core.mapping.Document
+import org.springframework.data.mongodb.repository.MongoRepository
+import org.springframework.stereotype.Repository
 import java.util.*
 
 @Document(collection = "drivers")
@@ -20,3 +22,8 @@ data class Driver(
         var dob: Date,
         var createdOn: Date,
         var updatedOn: Date)
+
+@Repository
+interface DriverRepository : MongoRepository<Driver, String> {
+
+}

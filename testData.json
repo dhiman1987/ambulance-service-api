@@ -1,0 +1,163 @@
+db.cars.insert([{
+	"carNumber": "WB021111",
+	"currentLocation": {
+		"coordinates": [
+			88.38403,
+			22.767195
+		],
+		"type": "Point",
+		"x": 88.38403,
+		"y": 22.767195
+	},
+	"status": "NA",
+	"type": "REGULAR",
+	"driver": {
+		"name": "Rider Wireless Para",
+		"address": "Wireless Para",
+		"mobile": "1234567893",
+		"email": "rider@ambu.com",
+		"licenseNumber": "WB111222333",
+		"gender": "M",
+		"dob": "1980-02-01T00:00:00.005Z",
+		"createdOn": new Date(),
+		"updatedOn": new Date()
+	},
+	"onBoarderOn": new Date(),
+	"updatedOn": new Date()
+},
+{
+	"carNumber": "WB022222",
+	"currentLocation": {
+		"coordinates": [
+			88.388119,
+			22.767195
+		],
+		"type": "Point",
+		"x": 88.388119,
+		"y": 22.767195
+	},
+	"status": "NA",
+	"type": "REGULAR",
+	"driver": {
+		"name": "Rider Kalyani Highway more",
+		"address": "Kalyani Highway more",
+		"mobile": "2222222222",
+		"email": "rider2@ambu.com",
+		"licenseNumber": "WB111222444",
+		"gender": "M",
+		"dob": "1985-03-05T00:00:00.005Z",
+		"createdOn": new Date(),
+		"updatedOn": new Date()
+	},
+	"onBoarderOn": new Date(),
+	"updatedOn": new Date()
+},
+{
+	"carNumber": "WB023333",
+	"currentLocation": {
+		"coordinates": [
+			88.388119,
+			22.767483
+		],
+		"type": "Point",
+		"x": 88.388119,
+		"y": 22.767483
+	},
+	"status": "NA",
+	"type": "REGULAR",
+	"driver": {
+		"name": "Rider Barrackpore Station",
+		"address": "Barrackpore Station",
+		"mobile": "3333333333",
+		"email": "rider3@ambu.com",
+		"licenseNumber": "WB111222555",
+		"gender": "M",
+		"dob": "1980-02-01T00:00:00.005Z",
+		"createdOn": new Date(),
+		"updatedOn": new Date()
+	},
+	"onBoarderOn": new Date(),
+	"updatedOn": new Date()
+},
+{
+	"carNumber": "WB024444",
+	"currentLocation": {
+		"coordinates": [
+			88.369262,
+			22.766543
+		],
+		"type": "Point",
+		"x": 88.369262,
+		"y": 22.766543
+	},
+	"status": "NA",
+	"type": "REGULAR",
+	"driver": {
+		"name": "Rider Lalkuthi",
+		"address": "Lalkuthi",
+		"mobile": "4444444444",
+		"email": "rider4@ambu.com",
+		"licenseNumber": "WB111222666",
+		"gender": "M",
+		"dob": "1982-07-12T00:00:00.005Z",
+		"createdOn": new Date(),
+		"updatedOn": new Date()
+	},
+	"onBoarderOn": new Date(),
+	"updatedOn": new Date()
+},
+{
+	"carNumber": "WB025555",
+	"currentLocation": {
+		"coordinates": [
+			88.3552,
+			22.767195
+		],
+		"type": "Point",
+		"x": 88.3552,
+		"y": 22.765144
+	},
+	"status": "NA",
+	"type": "REGULAR",
+	"driver": {
+		"name": "Rider Mangal Panday stop",
+		"address": "Mangal Panday stop",
+		"mobile": "6666666666",
+		"email": "ride5r@ambu.com",
+		"licenseNumber": "WB111222777",
+		"gender": "M",
+		"dob": "1976-05-05T00:00:00.005Z",
+		"createdOn": new Date(),
+		"updatedOn": new Date()
+	},
+	"onBoarderOn": new Date(),
+	"updatedOn": new Date()
+},
+{
+	"carNumber": "WB026666",
+	"currentLocation": {
+		"coordinates": [
+			88.3552,
+			22.765144
+		],
+		"type": "Point",
+		"x": 88.3552,
+		"y": 22.765144
+	},
+	"status": "NA",
+	"type": "REGULAR",
+	"driver": {
+		"name": "Rider Titagarh market",
+		"address": "Titagarh market",
+		"mobile": "1234567894",
+		"email": "rider6@ambu.com",
+		"licenseNumber": "WB111222888",
+		"gender": "M",
+		"dob": "1975-11-07T00:00:00.005Z",
+		"createdOn": new Date(),
+		"updatedOn": new Date()
+	},
+	"onBoarderOn": new Date(),
+	"updatedOn": new Date()
+}
+]);

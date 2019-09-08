@@ -1,9 +1,6 @@
 package com.service.ambulance.ambu.endpoint
 
-import com.service.ambulance.ambu.data.Car
-import com.service.ambulance.ambu.data.CarRepository
-import com.service.ambulance.ambu.data.Request
-import com.service.ambulance.ambu.data.RequestRepository
+import com.service.ambulance.ambu.data.*
 import com.service.ambulance.ambu.service.BackOfficeService
 import org.springframework.data.geo.Distance
 import org.springframework.data.geo.Metrics
@@ -22,9 +19,12 @@ class BackOfficeEndpoint(val backOfficeService: BackOfficeService){
 
     @GetMapping("find-ambulance")
     fun findCarsForRequest(
-            @RequestBody request: Request,
-            @RequestParam(value = "radius", defaultValue = "3", required = false)distance : Double): Iterable<Car>
-    = backOfficeService.findCarsForRequest(request, distance)
+            @RequestParam("long") lon : Double,
+            @RequestParam("lat") lat : Double,
+            @RequestParam("requested-car-type") requestedCarType : String,
+            @RequestParam(value = "radius", defaultValue = "3", required = false)distance : Double)
+            : Iterable<Car>
+    = backOfficeService.findCarsForRequest(lon, lat, requestedCarType, distance)
 
     @PutMapping("confirm-request")
     fun confirmRequest(@RequestBody request: Request): Request = backOfficeService.confirmRequest(request)
@@ -42,6 +42,20 @@ class BackOfficeEndpoint(val backOfficeService: BackOfficeService){
             @RequestParam("lat")lat : Double):Car
     = backOfficeService.updateCarLocation(car, lon, lat)
 
+    @GetMapping("find-ambulance-by-number")
+    fun findCarByNumber(@RequestParam("carNumber") carNumber : String) : Car
+            = backOfficeService.findCarByNumber(carNumber)
+
     @PutMapping("update-car")
-    fun updateCar(@RequestBody car:Car):Car = updateCar(car)
+    fun updateCar(@RequestBody car:Car):Car = backOfficeService.updateCar(car)
+
+    @PostMapping("add-driver")
+    fun addDriver(driver : Driver) : Driver =  backOfficeService.addDriver(driver)
+
+    @PutMapping("update-driver")
+    fun updateDriver(driver : Driver) : Driver =  backOfficeService.updateDriver(driver)
+
+    @GetMapping("find-driver-by-id")
+    fun findDriverById(@RequestParam("id") id : String) : Driver
+            = backOfficeService.findDriverById(id)
 }
