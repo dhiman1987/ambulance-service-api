@@ -15,7 +15,7 @@ import org.springframework.stereotype.Repository
 
 import java.util.*
 
-@Document(collection = "cars")
+@Document(collection = "ambulances")
 data class Car(
                @Id var id: String? = null,
                @Indexed(unique=true)
